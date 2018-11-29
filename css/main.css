@@ -1,0 +1,169 @@
+@import url(../fonts/fontawesome-free-5.5.0-web/css/all.min.css);
+@import url(../fonts/GothamBook/font.css);
+@import url(../fonts/GothamPro/stylesheet.css);
+@import url(../fonts/opensans/opensans.css);
+@import url(../fonts/roboto/roboto.css);
+@import url(../fonts/robotocondensed/robotocondensed.css);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.block1 {
+  background-image: url(../img/back1.jpg);
+  width: 1904px;
+  height: 938px;
+  color: #fff; }
+
+.mainHeader {
+  width: 100%;
+  height: 115px;
+  margin: auto;
+  line-height: 115px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38); }
+
+.boxInHeader {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 270px; }
+
+.mainLogo {
+  margin-right: 260px; }
+
+nav.mainNav a {
+  line-height: 100%;
+  height: 115px;
+  text-decoration: none;
+  color: #FFF;
+  font-family: roboto, sans-serif;
+  font-size: 19px;
+  padding: 30px;
+  padding-bottom: 42px; }
+  nav.mainNav a:hover {
+    border-bottom: 5px solid rgba(255, 255, 255, 0.4); }
+
+a#selected {
+  border-bottom: 5px solid #11749E; }
+
+.links {
+  margin-left: 60px; }
+
+.links a {
+  padding: 12px; }
+
+.links i:hover {
+  -webkit-transform: scale(1.3, 1.3);
+      -ms-transform: scale(1.3, 1.3);
+          transform: scale(1.3, 1.3); }
+
+.socNet {
+  color: #fff; }
+
+.centralPart {
+  text-align: center;
+  margin-top: 220px;
+  font-family: "Gotham Pro", sans-serif; }
+
+.creativesText {
+  font-size: 147px;
+  font-weight: bold; }
+
+.pwrPSD {
+  color: #11749E;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 20px;
+  padding-left: 14px; }
+
+.weAwesome {
+  background-image: url(../img/W1.jpg);
+  width: 1904px;
+  height: 800px;
+  background-position: center center;
+  background-repeat: repeat-x;
+  font-family: "Gotham Pro", sans-serif;
+  color: #fff;
+  text-align: center; }
+
+.awesomeText {
+  padding: 160px;
+  font-size: 37px;
+  font-weight: 400; }
+
+.features {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
+.feaBls {
+  width: 300px;
+  text-align: center;
+  margin: 40px 15px 0px 15px; }
+
+.feaH1 {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 30px; }
+
+.feaImg {
+  width: 140px; }
+
+.feaText {
+  font-weight: 300;
+  line-height: 1.5em; }
+
+.numb {
+  width: 1904px;
+  height: 512px; }
+
+.golos {
+  width: 952px;
+  height: 512px;
+  float: left; }
+
+.tleft {
+  background-color: #222222;
+  color: #fff; }
+
+.tright {
+  background-image: url(../img/tright.jpg);
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%; }
+
+.bleft {
+  background-image: url(../img/bright.jpg);
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%; }
+
+.bright {
+  background-color: #F3F3F3; }
+
+.golostlText {
+  width: 480px;
+  height: 260px;
+  margin-left: 300px;
+  margin-top: 100px;
+  font-weight: 300;
+  line-height: 1.5em; }
+
+.golosTitle {
+  margin-bottom: 40px;
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400; }
+
+.golosTime, .golosPart1, .golosPart2 {
+  margin-bottom: 20px;
+  font-family: "Gotham Pro", sans-serif; }
+
+.gtrBot {
+  margin-left: 100px;
+  margin-top: 100px; }
