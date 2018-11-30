@@ -27,13 +27,10 @@
 	align-items: center
 	margin-left: 270px
 
-.mainLogo 
-	// float: left
+.mainLogo 	
 	margin-right: 260px
 
-nav.mainNav a
-	
-	line-height: 100%
+nav.mainNav a		
 	height: 115px
 	width: 
 	text-decoration: none
@@ -77,10 +74,7 @@ a#selected
 	letter-spacing: 20px
 	padding-left: 14px
 
-
-
 //**************2стр*******************
-
 
 .weAwesome
 	background-image: url(../img/W1.jpg)
@@ -118,8 +112,6 @@ a#selected
 	font-weight: 300
 	line-height: 1.5em
 
-
-
 //**************3стр*******************
 
 @mixin numb ($w,$h)
@@ -132,8 +124,7 @@ a#selected
 @mixin golos ($w,$h)
 	.#{golos}
 		width: $w 
-		height: $h	
-		
+		height: $h			
 		float: left
 
 @include golos (952px,512px)
@@ -163,8 +154,6 @@ a#selected
 	font-weight: 300
 	line-height: 1.5em
 
-
-
 .golosTitle
 	margin-bottom: 40px
 	font-family: "Gotham Pro", sans-serif
@@ -178,5 +167,22 @@ a#selected
 	margin-left: 100px
 	margin-top: 100px
 
+.up
+	background-image: url(../img/butUp.png)
+	background-size: 100%
+	width: 50px
+	height: 50px	
+	position: fixed
+	cursor: pointer
+	display: none
+
+.down
+	width: 100px
+	border: 1px solid #ccc
+	background: #f7f7f7
+	text-align: center
+	position: fixed
+	cursor: pointer
+	display: none
 	
 	
