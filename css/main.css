@@ -12,7 +12,9 @@
 
 .block1 {
   background-image: url(../img/back1.jpg);
-  width: 1904px;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
   height: 938px;
   color: #fff; }
 
@@ -85,8 +87,9 @@ a#selected {
   background-image: url(../img/W1.jpg);
   width: 1904px;
   height: 800px;
-  background-position: center center;
-  background-repeat: repeat-x;
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover;
   font-family: "Gotham Pro", sans-serif;
   color: #fff;
   text-align: center; }
@@ -135,13 +138,15 @@ a#selected {
 
 .tright {
   background-image: url(../img/tright.jpg);
-  -webkit-background-size: 100% 100%;
-          background-size: 100% 100%; }
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover; }
 
 .bleft {
   background-image: url(../img/bright.jpg);
-  -webkit-background-size: 100% 100%;
-          background-size: 100% 100%; }
+  background-position: center;
+  -webkit-background-size: cover;
+          background-size: cover; }
 
 .bright {
   background-color: #F3F3F3; }
@@ -185,3 +190,23 @@ a#selected {
   position: fixed;
   cursor: pointer;
   display: none; }
+
+.lets-blog {
+  width: 100vw;
+  height: 986px;
+  -webkit-background-size: cover;
+          background-size: cover;
+  text-align: center;
+  font-family: "Gotham Pro", sans-serif; }
+
+h1.blog-text {
+  font-size: 37px;
+  font-weight: 400; }
+
+.blog-flex {
+  margin: 200px; }
+
+.lkol {
+  width: 100vw;
+  height: 1000px;
+  margin-top: 150px; }
