@@ -15,22 +15,22 @@
 	height: 938px
 	color: #fff	
 	
-.mainHeader 	
-	
+.mainHeader 		
 	width: 100%
-	height: 115px
-	margin: auto	
-	
-	line-height: 115px
+	height: 119px
+	margin: auto		
+	line-height: 119px
 	border-bottom: 1px solid rgba(255,255,255,0.38)
-
+	
 .boxInHeader 
 	display: inline-flex
 	align-items: center
 	margin-left: 270px
+	
 
 .mainLogo 	
 	margin-right: 260px
+	height: 75px
 
 nav.mainNav a		
 	height: 115px
@@ -80,7 +80,7 @@ a#selected
 
 .weAwesome
 	background-image: url(../img/W1.jpg)
-	width: 1904px
+	width: 100vw
 	height: 800px
 	background-position: center
 	background-size: cover
@@ -109,6 +109,8 @@ a#selected
 
 .feaImg
 	width: 140px
+	&:hover
+		transform: scale(1.2, 1.2)
 
 .feaText 
 	font-weight: 300
@@ -116,12 +118,12 @@ a#selected
 
 //**************3стр*******************
 
-@mixin numb ($w,$h)
-	.#{numb}
+@mixin numb ($n,$w,$h)
+	.#{$n}
 		width: $w 
 		height: $h	
 
-@include numb (1904px,512px)
+@include numb (numb,1904px,512px)
 
 @mixin golos ($w,$h)
 	.#{golos}
@@ -170,7 +172,7 @@ a#selected
 .gtrBot
 	margin-left: 100px
 	margin-top: 100px
-
+//********buttons***********
 .up
 	background-image: url(../img/butUp.png)
 	background-size: 100%
@@ -193,20 +195,191 @@ a#selected
 
 .lets-blog 
 	width: 100vw
-	height: 986px
+	height: 1150px
 	background-size: cover
 	text-align: center
 	font-family: "Gotham Pro", sans-serif
 
-h1.blog-text 
-	
-	font-size: 37px
-	font-weight: 400
-
 .blog-flex
-	margin: 200px
+	margin: 50px
 
 .lkol 
-	width: 100vw
-	height: 1000px
+	width: 100vw	
+	padding-top: 219px
+
+.head-blog-text	
+	font-weight: 500
+	font-family: "Gotham Pro", sans-serif
+	font-size: 37px
+
+.we-love-text-block
 	margin-top: 150px
+	
+.we-love-text
+	font-size: 30px
+	font-weight: 300
+	font-family: "Gotham Pro", sans-serif
+
+.blog-text 
+	color: #11749E
+	font-family: "Gotham Pro", sans-serif
+	text-transform: uppercase 
+	font-size: 20px
+	padding: 15px 0
+
+.min-blog-text	
+	line-height: 1.6
+	font-weight: 300
+
+//**********5стр**************
+
+.block5
+	width: 100vw
+	height: 400px
+	background-color: #11749E
+
+@include numb (bl5-main,1280px,100px)
+@include numb (bl5-main-left,640px,100px)
+@include numb (bl5-main-right,590px,100px)
+
+.bl5-main
+	margin: auto
+	vertical-align: middle
+	padding-top: 175px
+
+.bl5-main-left
+	display: inline-block
+	float: left 
+	margin-right: 50px
+
+.bl5-main-right
+	float: left
+
+.bl5-img 
+	margin: 0 30px 0 0
+	background-image: url(../img/img5bl.png)
+	width: 69px
+	height: 69px
+	float: left
+.bl5-text
+	width: 490px
+	float: left 
+	font-family: "Gotham Pro", sans-serif
+	color: #fff
+	font-weight: 300
+	line-height: 1.5
+
+//menu
+
+.menu 
+    text-align: right
+
+
+.menu__icon 
+   display: none
+   width: 45px
+   height: 35px
+   position: relative
+   cursor: pointer
+
+
+.menu__icon span 
+  display: block
+  position: absolute
+  height: 9px
+  width: 100%
+  background: #fff
+  border-radius: 9px
+  opacity: 1
+  left: 0
+  transform: rotate(0deg)
+  transition: .25s ease-in-out
+
+
+.menu__icon span:nth-child(1) 
+  top: 0px
+
+
+.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) 
+  top: 13px
+
+
+.menu__icon span:nth-child(4) 
+  top: 26px
+ 
+
+.menu__links-item 
+    display: inline-block
+    color: #333333
+    font-family: Arial
+    font-size: 14px
+    line-height: 30px
+    padding: 0 10px
+    text-transform: uppercase
+    text-decoration: none
+    cursor: pointer
+
+
+.menu__links-item
+	&:hover 
+    	text-decoration: underline
+
+
+.menu.menu_state_open .menu__icon span
+	&:nth-child(1)
+		top: 18px 
+		width: 0
+		left: 50%
+
+
+.menu.menu_state_open .menu__icon span
+	&:nth-child(2) 
+  		transform: rotate(45deg)
+
+
+.menu.menu_state_open  .menu__icon span
+	&:nth-child(3) 
+  		transform: rotate(-45deg)
+
+
+.menu.menu_state_open  .menu__icon span
+	&:nth-child(4) 
+  		top: 18px
+  		width: 0%
+  		left: 50%
+
+
+.menu.menu_state_open .menu__links 
+  	display: block 
+
+
+@media screen and (max-width: 1400px)
+	.links 
+		display: none
+
+	.mainNav
+		display: none
+
+	.mainLogo
+		display: none
+
+ 	.menu__icon
+ 		display: inline-block 		
+
+  	.menu__links 
+   		position: fixed
+    	display: block
+    	top: 0
+    	right: 0
+    	left: 0
+    	margin-top: 52px
+    	background-color: rgba(0, 0, 0, 0.8)
+    	z-index: 1000
+    	overflow: auto
+  
+  
+  	.menu__links-item 
+    	display: block
+    	padding: 10px 0
+    	text-align: center
+    	color: #fff
