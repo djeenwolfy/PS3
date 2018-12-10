@@ -80,7 +80,7 @@ a#selected
 
 .weAwesome
 	background-image: url(../img/W1.jpg)
-	width: 100vw
+	width: 100%
 	height: 800px
 	background-position: center
 	background-size: cover
@@ -123,7 +123,7 @@ a#selected
 		width: $w 
 		height: $h	
 
-@include numb (numb,1904px,512px)
+@include numb (numb,100%,512px)
 
 @mixin golos ($w,$h)
 	.#{golos}
@@ -131,7 +131,7 @@ a#selected
 		height: $h			
 		float: left
 
-@include golos (952px,512px)
+@include golos (50%,512px)
 @mixin bgc ($cwet)
 	background-color: $cwet
 
@@ -173,28 +173,35 @@ a#selected
 	margin-left: 100px
 	margin-top: 100px
 //********buttons***********
-.up
+.scroll-up
 	background-image: url(../img/butUp.png)
 	background-size: 100%
 	width: 50px
 	height: 50px	
 	position: fixed
 	cursor: pointer
-	display: none
+	z-index: 101
+	right: 48.666%
+	top: 25px
+	// display: none
 
-.down
-	width: 100px
-	border: 1px solid #ccc
-	background: #f7f7f7
-	text-align: center
+.scroll-down
+	background-image: url(../img/butDown.png)
+	background-size: 100%
+	width: 50px
+	height: 50px	
 	position: fixed
 	cursor: pointer
-	display: none
+	z-index: 101
+	right: 48.666%
+	bottom: 25px
+	// display: none
+	
 	
 //**************4стр*******************
 
 .lets-blog 
-	width: 100vw
+	width: 100%
 	height: 1150px
 	background-size: cover
 	text-align: center
@@ -204,7 +211,7 @@ a#selected
 	margin: 50px
 
 .lkol 
-	width: 100vw	
+	width: 100%	
 	padding-top: 219px
 
 .head-blog-text	
@@ -234,7 +241,7 @@ a#selected
 //**********5стр**************
 
 .block5
-	width: 100vw
+	width: 100%
 	height: 400px
 	background-color: #11749E
 
@@ -269,119 +276,170 @@ a#selected
 	font-weight: 300
 	line-height: 1.5
 
+// **********6стр**************
+@include numb (block-6, 100%, 1042px)
+
+.block-6 
+	background-image: url(../img/back-bl-6.png)
+	background-position:  center
+	background-size: cover
+.block-6-left 
+	width: 50%
+	float: left
+	height: 100%
+	color: white
+
+
+.block-6-right
+	width: 50%
+	float: left
+	height: 100%
+.bl-6-right-content
+	background-image: url(../img/phone.png)
+	background-position: center
+	background-repeat: no-repeat
+	
+	height: 100%
+	width: 76%
+
+@include numb (st_1, 300px, 35px)
+@include numb (st_2, 330px, 35px)
+@include numb (st_3, 360px, 35px)
+.st_1, .st_2, .st_3
+	background-color: #11749E
+
+.bl-6-left-content
+	width: 65%
+	height: 70%
+	margin-top: 275px
+	margin-left: 150px
+	font-family: "Gotham Pro", sans-serif
+	font-weight: 300
+	text-transform: uppercase
+
+	p
+		margin-top: 30px
+		margin-bottom: 45px
+		text-transform: none
+
+	div
+		margin-top: 20px
+		padding-top: 10px
+		padding-left: 15px
+
 //menu
 
-.menu 
-    text-align: right
+// .menu 
+//     text-align: right
 
 
-.menu__icon 
-   display: none
-   width: 45px
-   height: 35px
-   position: relative
-   cursor: pointer
+// .menu__icon 
+//    display: none
+//    width: 45px
+//    height: 35px
+//    position: relative
+//    cursor: pointer
 
 
-.menu__icon span 
-  display: block
-  position: absolute
-  height: 9px
-  width: 100%
-  background: #fff
-  border-radius: 9px
-  opacity: 1
-  left: 0
-  transform: rotate(0deg)
-  transition: .25s ease-in-out
+// .menu__icon span 
+//   display: block
+//   position: absolute
+//   height: 9px
+//   width: 100%
+//   background: #fff
+//   border-radius: 9px
+//   opacity: 1
+//   left: 0
+//   transform: rotate(0deg)
+//   transition: .25s ease-in-out
 
 
-.menu__icon span:nth-child(1) 
-  top: 0px
+// .menu__icon span:nth-child(1) 
+//   top: 0px
 
 
-.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) 
-  top: 13px
+// .menu__icon span:nth-child(2), .menu__icon span:nth-child(3) 
+//   top: 13px
 
 
-.menu__icon span:nth-child(4) 
-  top: 26px
+// .menu__icon span:nth-child(4) 
+//   top: 26px
  
 
-.menu__links-item 
-    display: inline-block
-    color: #333333
-    font-family: Arial
-    font-size: 14px
-    line-height: 30px
-    padding: 0 10px
-    text-transform: uppercase
-    text-decoration: none
+// .menu__links-item 
+//     display: inline-block
+//     color: #333333
+//     font-family: Arial
+//     font-size: 14px
+//     line-height: 30px
+//     padding: 0 10px
+//     text-transform: uppercase
+//     text-decoration: none
 
 
-// .menu__links-item
-// 	&:hover 
-//     	text-decoration: underline
+// // .menu__links-item
+// // 	&:hover 
+// //     	text-decoration: underline
 
 
-.menu.menu_state_open .menu__icon span
-	&:nth-child(1)
-		top: 18px 
-		width: 0
-		left: 50%
+// .menu.menu_state_open .menu__icon span
+// 	&:nth-child(1)
+// 		top: 18px 
+// 		width: 0
+// 		left: 50%
 
 
-.menu.menu_state_open .menu__icon span
-	&:nth-child(2) 
-  		transform: rotate(45deg)
+// .menu.menu_state_open .menu__icon span
+// 	&:nth-child(2) 
+//   		transform: rotate(45deg)
 
 
-.menu.menu_state_open  .menu__icon span
-	&:nth-child(3) 
-  		transform: rotate(-45deg)
+// .menu.menu_state_open  .menu__icon span
+// 	&:nth-child(3) 
+//   		transform: rotate(-45deg)
 
 
-.menu.menu_state_open  .menu__icon span
-	&:nth-child(4) 
-  		top: 18px
-  		width: 0%
-  		left: 50%
+// .menu.menu_state_open  .menu__icon span
+// 	&:nth-child(4) 
+//   		top: 18px
+//   		width: 0%
+//   		left: 50%
 
 
-.menu.menu_state_open .menu__links 
-  	display: block 
+// .menu.menu_state_open .menu__links 
+//   	display: block 
 
 
-@media screen and (max-width: 1400px)
-	.links 
-		display: none
+// @media screen and (max-width: 1400px)
+// 	.links 
+// 		display: none
 
-@media screen and (max-width: 1400px)
-	.mainNav
-		display: none
+// @media screen and (max-width: 1400px)
+// 	.mainNav
+// 		display: none
 
-@media screen and (max-width: 1400px)
-	.mainLogo
-		display: none
+// @media screen and (max-width: 1400px)
+// 	.mainLogo
+// 		display: none
 
-@media screen and (max-width: 1400px)
- 	.menu__icon
- 		display: inline-block 		
-@media screen and (max-width: 1400px)
-  	.menu__links 
-   		position: fixed
-    	display: block
-    	top: 0
-    	right: 0
-    	left: 0
-    	margin-top: 52px
-    	background-color: rgba(0, 0, 0, 0.8)
-    	z-index: 1000
-    	overflow: auto
+// @media screen and (max-width: 1400px)
+//  	.menu__icon
+//  		display: inline-block 		
+// @media screen and (max-width: 1400px)
+//   	.menu__links 
+//    		position: fixed
+//     	display: block
+//     	top: 0
+//     	right: 0
+//     	left: 0
+//     	margin-top: 52px
+//     	background-color: rgba(0, 0, 0, 0.8)
+//     	z-index: 1000
+//     	overflow: auto
   
-@media screen and (max-width: 1400px)
-  	.menu__links-item 
-    	display: block
-    	padding: 10px 0
-    	text-align: center
-    	color: #fff
+// @media screen and (max-width: 1400px)
+//   	.menu__links-item 
+//     	display: block
+//     	padding: 10px 0
+//     	text-align: center
+//     	color: #fff
