@@ -1,9 +1,19 @@
 @import "fonts" //импорт шрифтов
 
+$accent:  #11749E //цвет
+$white: #fff
+$dark: #222
+$light-grey: #F3F3F3
+$font-Gotham: "Gotham Pro", sans-serif
+$font-roboto: roboto, sans-serif
+
 *
 	margin: 0
 	padding: 0
 	box-sizing: border-box
+
+.grid
+	display: grid 
 
 // ************1 стр******************************
 
@@ -328,46 +338,157 @@ a#selected
 		padding-left: 15px
 
 
-// **********7стр**************
 
-.grid
-	display: grid
+// **** MIXINS ********
+
+@mixin block ($class, $width, $height, $back-col)
+	.#{$class}
+		width: $width
+		height: $height
+		background-color: $back-col 
+
+@mixin sub-block-top ($class-1, $h-cl-1,$subclass-1, $h-sub-cl-1, $bl-4-bg-image, $class-2, $h-cl-2)
+	.#{$class-1}
+		height: $h-cl-1
+		min-height: $h-cl-1
+		width: 100%
+		align-content: center
+		.#{$subclass-1}
+			width: 100%
+			height: $h-sub-cl-1
+			text-align: center
+			background-image: $bl-4-bg-image
+			background-repeat: no-repeat
+			background-position: center
+			align-content: center
+			p 	
+				font-family: $font-Gotham
+				font-weight: 400
+				text-transform: uppercase
+				font-size: 30px	
+
+	.#{$class-2}
+		height: $h-cl-2
+		width: 100%
+		text-align: center
+		align-content: start 
+		p 
+			font-family: $font-Gotham
+			font-size: 30px
+			font-weight: 300
+@mixin sub-block-bottom ($class-3, $h-cl-3, $thing-1, $thing-2, $thing-3, $thing-4)
+	.#{$class-3}
+		height: $h-cl-3
+		width: 100%
+		grid-template-columns: 1fr minmax(200px, 280px) minmax(200px, 280px) minmax(200px, 280px) minmax(200px, 280px)  1fr 
+		grid-gap: 40px
+	.#{$thing-1}
+		grid-column: 2 / 3
+	.#{$thing-2}
+		grid-column: 3 / 4
+	.#{$thing-3}
+	 	grid-column: 4 / 5
+	.#{$thing-4}
+		grid-column: 5 / 6
+@mixin grid-blocks-bottom ($g-bl, $bl-images, $img-1, $bg-i-1, $img-2, $bg-i-2, $img-3, $bg-i-3, $img-4, $bg-i-4, $gr-tem-r-1, $gr-tem-r-2)
+	.#{$g-bl}
+		text-align: center
+		font-family: $font-Gotham
+		grid-row-gap: 12px
+		grid-template-rows: $gr-tem-r-1 $gr-tem-r-2
+		h1 
+			text-transform: uppercase 
+			font-size: 19px
+			font-weight: 400
+			color: $accent
+		p 
+			font-weight: 300
+			line-height: 1.6
+
+	.#{$bl-images}
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+	.#{$img-1}
+		background-image: $bg-i-1		
+	.#{$img-2}
+		background-image: $bg-i-2
+	.#{$img-3}
+		background-image: $bg-i-3
+	.#{$img-4}
+		background-image: $bg-i-4
 
 
-@include numb (block-7, 100%, 945px)
 
-.block-7
-	background-color: #fff
 
-.block-7-top
-	width: 100%
-	height: 35%
-	align-content: center
-	font-family: "Gotham Pro", sans-serif
-.bl-7-top-content
-	width: 100%
-	height: 176px
-	background-image: url(../img/T.png)
-	background-position: center
-	background-repeat: no-repeat
-	text-align: center
-	align-content: center
-	p 
-		font-family: "Gotham Pro", sans-serif
-		font-size: 
-.bl-7-center-text	
-	height: 5%
-	width: 100%
-	text-align: center
-	font-family: "Gotham Pro", sans-serif
 
-.bl-7-top-text
-	width: 100%
+
+// ****** block 7 with mixins*******
+
+@include block (block-7, 100%, 950px, $white)
+@include sub-block-top (block-7-top, 35%, bl-7-top-content, 176px, url(../img/T.png), block-7-center, 10%)
+@include sub-block-bottom (block-7-bottom, 60%, bl-7-grid-1, bl-7-grid-2, bl-7-grid-3, bl-7-grid-4 )
+@include grid-blocks-bottom (block-7-things, bl-7-imgs, bl-7-img-1, url(../img/ceo.png), bl-7-img-2, url(../img/web-designer.png), bl-7-img-3, url(../img/photographer-1.png), bl-7-img-4, url(../img/photographer-2.png), 414px, 1px )
+
+.block-7-things
+	grid-row-gap: 0px
+	h4
+		font-weight: 400
+
+.bl-7-imgs
+	justify-items: center
+	align-items: end
+.bl-7-team
+	width: 80%
 	height: 50px
-.block-7-bottom
-	width: 100%
-	height: 60%
+	background-color: $white
+	align-content: center
 
+
+// ***** block 8 ******
+@include sub-block-top (block-8-top, 45%, bl-8-top-content, 182px, url(../img/C.png), block-8-center, 0)
+.block-8
+	width: 100%
+	height: 860px
+	background-image: url(../img/bg-i-bl-8.png)
+	background-position: center
+	background-size: cover
+.bl-8-top-content
+	color: $white	
+
+.block-8-bottom
+	text-align: center
+	form 
+
+		input
+			background-color: transparent 
+			border: 1px solid $white
+			width: 370px
+			height: 47px
+			color: $white
+			padding-left: 20px 
+			font-size: 16px
+			margin-left: 30px
+	input[name="textarea-bl-8"]
+		margin-top: 30px
+		height: 150px
+		width: 1180px	
+		padding-bottom: 95px 
+	.btn-bl-8
+		background-color: $accent
+		width: 200px
+		height: 40px
+		margin-top: 30px
+
+
+
+
+
+::-webkit-input-placeholder /* WebKit browsers */
+    color:   $white			
+
+
+			
 
 
 //menu
